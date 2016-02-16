@@ -87,12 +87,12 @@
               <i class="fa fa-language"></i></i>
             </a>
           </li>
-          <li ui-sref-active="active" dropdown>
-            <a href="#" ui-sref="app.menu.about" dropdown-toggle>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.about.mission" ng-click="navCollapsed=true">
                 <i class="fa fa-info-circle"></i>
-                {{'ABOUT_US' | translate }} <b class="caret"></b>
+                {{'ABOUT_US' | translate }} <!-- <b class="caret"></b> -->
             </a>
-            <ul ui-sref-active="active" class="dropdown-menu inverse-dropdown">
+            <!-- <ul ui-sref-active="active" class="dropdown-menu inverse-dropdown">
               <li ui-sref-active="active">
                 <a href="#" ui-sref="app.menu.about.mission" ng-click="navCollapsed=true">
                     <i class="fa fa-bullseye"></i>
@@ -111,7 +111,7 @@
                     {{'CONTACT' | translate }}
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </li>
         </ul>
         </div>

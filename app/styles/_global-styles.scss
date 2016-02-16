@@ -486,6 +486,10 @@ p.ng-binding {
     border-radius: 1px;
 }
 
+.single_post_content p {
+  padding-bottom: 10px;
+}
+
 .disabled {
    pointer-events: none;
    cursor: default;
@@ -1104,3 +1108,21 @@ button {
     display: none !important;
 }
 
+////////////
+
+.nav-tabs a{ 
+  color: #0A4595;
+}
+
+.nav-tabs a:hover{
+  color: #E48D32;
+}
+
+.nav-tabs a:active, .nav-tabs a:focus{
+  color: #B6343A;
+  background-color: red;
+}
+
+.tab-content {
+    padding: 10px;
+}
