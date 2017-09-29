@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+      <base href="/">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title ng-bind="$root.pageTitle"></title>
+
+      <meta name="keywords" content="EMI, Energy Management Institute, ЕМИ, Институт Енергиен Мениджмънт, eurelectric Bulgaria, енергетика, energy, research, energy trainings, енергийна полиика, обучения, events, енергийна инфраструктура">
+      <meta name="description" content="{{'SEO_KEYWORDS' | translate }}">
+
+
+      <meta name="viewport" content="width=device-width">
+      <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="css/styles.css">
+
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <div class="jumbotron">
+      Браузърът, който използвате не се поддържа от EMI. Моля използвайте  Internet Explorer 9 или по-нова версия, последна версия на Firefox, Chrome, Opera или Safary. 
+    </div>
+    <div class="jumbotron">
+      Your browser is not supported. Please update your browser to IE 9 or later, latest Firfox, Chrome, Opera or Safary.
+    </div>
+    <![endif]-->
+    <div class="wrap">
+      <div class="visible-md visible-lg">
+        <div class="container">
+           <div ui-view="banner"></div>
+        </div>
+      </div>
+      <div id="wrap">
+        <div id="main" class="container">
+          <div ui-view="menu"></div>
+          <div class="row">
+            <div class="col-sm-12 col-md-8">
+              <div ui-view="content"></div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <div ui-view="right-column"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div ui-view="footer"></div>
+      <script src="js/main.js"></script>
+    </div>
+  </body>
+</html>

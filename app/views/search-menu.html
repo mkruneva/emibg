@@ -1,0 +1,24 @@
+<div ng-controller="SearchMenuCtrl">
+<!-- Menu -->
+    <nav class="navbar navbar-inverse" role="navigation" ng-keypress="{esc: 'onEsk($event)'}">
+      <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#" ng-click="goBack()">
+                <i class="fa fa-arrow-left"></i>
+                <span class="hidden-xs">
+                &nbsp;
+               {{'BACK' | translate }}
+               </span>
+            </a>
+              <form class="navbar-form navbar-left" ng-submit="search()">
+                  <!-- Add form control horisontal size <div class="col-xs-4"> -->
+                    <input id="searchField" type="text" class="search-input"  ng-keypress="onEsk($event)" placeholder="{{'SEARCH' | translate }}" ng-change="search()" ng-model="searchTerm" autofocus>
+                  <button type="button" class="btn btn-warning" value="{{'SEARCH' | translate }}" ng-click="search()">
+                    <span class="visible-xs"><span class="glyphicon glyphicon-search"></span></span>
+                    <span class="hidden-xs">{{'SEARCH' | translate }}</span>
+                  </button>
+              </form>
+          </div>
+       </div>
+    </nav>
+</div>

@@ -1,0 +1,113 @@
+<div ng-controller="AdminArticleCtrl">
+  <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+  <div class="info-row-admin">
+    <button class="btn btn-success" ng-click="save()">Запис</button>
+
+    <div class="btn-group">
+      <label>&nbsp;&nbsp;&nbsp;<input type="radio" ng-model="articleType" value="news">&nbsp;Новини&nbsp;&nbsp;</label>
+      <label><input type="radio" ng-model="articleType" value="emis">&nbsp;Анализи на EMI&nbsp;&nbsp;</label>
+      <label><input type="radio" ng-model="articleType" value="summaries">&nbsp;Анализи Резюмета&nbsp;&nbsp;&nbsp;&nbsp;</label>
+     </div>
+
+    <div class="btn-group">
+      <input type="checkbox" ng-model="article.published">&nbsp;Публикувано</label>
+    </div>
+
+    <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
+  </div>
+  <uib-tabset>
+    <uib-tab heading="Редакция">
+      <form>
+        <div class="form-group">
+          <image-picker image="article.image" width="400px", height="300px"/>
+        </div>
+      </form>
+      <div style="margin-bottom: 20px;">
+        <form class="form-horizontal" role="form">
+          <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
+            <label class="control-label col-sm-3" for="email" style="text-align: left; padding-top: 0px;">Дата на публикуване:</label>
+              <div class="col-sm-9">
+              <input style="line-height: inherit;"
+                 type="date"
+                 name="input"
+                 ng-model="newPublicationDate.date"
+                 placeholder="yyyy-MM-dd"
+                 min="0001-01-01"
+                 ng-change="setPublicationDate()"/>
+              </div>
+          </div>
+        </form>
+      </div>
+      <form>
+        <div class="form-group">
+          <label>Автор Кирилица:</label>
+          <input type="text" class="form-control" placeholder="Автор" ng-model="article.author.bg">
+        </div>
+        <div class="form-group">
+          <label>Автор Латиница:</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Author" ng-model="article.autor.en">
+        </div>
+      </form>
+        <p>
+          <label>Заглавие:</label>
+          <h3><b>
+            <input type="text" class="form-control" placeholder="Заглавие на Български" ng-model="article.title.bg">
+          </b></h3>
+        </p>
+        <md-divider></md-divider>
+        <p>
+          <label>Съдържание</label>
+          <div style="height:400px" ui-tinymce="htmlBgOptions" ng-model="html.bg"></div>
+        </p>
+        <p>
+          <label>Заглавие на Английски:</label>
+          <h3><b>
+            <input type="text" class="form-control" placeholder="Заглавие на Английски" ng-model="article.title.en">
+          </b></h3>
+        </p>
+        <md-divider></md-divider>
+        <p>
+          <label>Съдържание на Английски:</label>
+          <div style="height:400px" ui-tinymce="htmlEnOptions" ng-model="html.en"></div>
+        </p>
+      <form>
+        <div class="form-group">
+          <label>Тагове</label>
+          <input type="text" class="form-control" placeholder="таг1 таг2" ng-model="article.tags">
+        </div>
+      </form>
+    </uib-tab>
+    <uib-tab heading="Изглед">
+       <div class="row">
+         <div class="col-sm-12 col-md-4">
+           <tile-article/>
+         </div>
+         <div class="col-sm-12 col-md-8">
+           <div class="row">
+              <div class="col-md-12">
+                <carousel>
+                  <slide>
+                    <emi-image image="article.image" width="100%" height="520px"></emi-image>
+                    <div class="carousel-caption">
+                      <h2>{{article.title | lang}}</h2>
+                      <h4> {{article.html | lang | htmlToPlainText | limitTo: 180}}...</h4>
+                    </div>
+                  </slide>
+                </carousel>
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-md-12">
+                <flat-article/>
+              </div>
+           </div>
+         </div>
+       </div>
+       <div class="row">
+         <h3><b>{{ article.title | lang }}</b></h3>
+         <md-divider></md-divider>
+         <p><div ng-bind-html="bgHtml || article.html.bg"></div></p>
+       </div>
+    </uib-tab>
+  </uib-tabset>
+</div>

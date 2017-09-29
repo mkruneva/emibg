@@ -1,0 +1,131 @@
+<div>
+    <nav class="navbar navbar-inverse " role="navigation">
+      <div class="container-fluid, header-nav">
+        <div class="navbar-header">
+            <a ng-href="#" class="navbar-toggle navbar-collapse-search" ui-sref="app.search.result({q:'',page:1})">
+              <label for="searchField">
+                <i class="fa fa-search"></i>
+              </label>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" ng-init="navCollapsed = true" ng-click="navCollapsed=!navCollapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="visible-xs visible-sm">
+            <a class="navbar-brand emi" href="#" ui-sref="app.menu.home" ng-click="navCollapsed=true">
+              <img src="images/EMI_logo_nav_bar_white.png" alt="EMI"> 
+            </a>
+            </div>
+                <!--<a class="navbar-brand" href="#" ui-sref="app.menu.home">
+                    <i class="icon-home"></i>
+                </a>-->
+        </div>
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div id="navbar" class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'"  ngCloak>
+        <ul class="nav navbar-nav">
+          <li class="active visible-md visible-lg" ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.home" ng-click="navCollapsed=true">
+                <i class="fa fa-home"></i>
+                {{'' | translate }} <!--doesnt seem to work when there is not text-->
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.news({page: 1})" ng-click="navCollapsed=true">
+                <i class="fa fa-file-text-o"></i>
+                {{'NEWS' | translate }}
+            </a>
+          </li>
+          <li class="dropdown" ui-sref-active="active" dropdown>
+              <a href="#" ui-sref="app.menu.analysis" dropdown-toggle>
+                <i class="fa fa-balance-scale"></i>
+                {{'ANALYSIS' | translate }} <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu inverse-dropdown">
+                <li ui-sref-active="active">
+                  <a href="#"ui-sref="app.menu.analysis.emis({page: 1})" ng-click="navCollapsed=true">
+                    <i class="fa fa-book"></i> 
+                     {{'EMIS_ANALYSIS' | translate }}
+                  </a>
+                </li>
+                <li ui-sref-active="active">
+                  <a href="#"ui-sref="app.menu.analysis.summaries({page: 1})" ng-click="navCollapsed=true">
+                    <i class="fa fa-area-chart"></i>
+                    {{'SUMMARIES' | translate}}
+                  </a>
+                </li>
+              </ul>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.events({page: 1})" ng-click="navCollapsed=true">
+                <i class="fa fa-calendar"></i>
+                {{'EVENTS' | translate }}
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.energopedia" ng-click="navCollapsed=true">
+                <i class="fa fa-bolt"></i>
+                {{'ENERGOPEDIA' | translate }}
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.partners" ng-click="navCollapsed=true">
+                <i class="fa fa-users"></i>
+                {{'PARTNERS' | translate }}
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="visible-md visible-lg" ui-sref="app.search.result({q:'*',page:1})">
+              <a href="#">
+                <label for="searchField">
+                  <i class="fa fa-search"></i>
+                </label>
+              </a>
+          </li>
+          <li>
+            <a ng-href="{{otherLangURL}}">
+              <i class="fa fa-language hidden-md hidden-lg"></i> 
+              <span>EN / BG</span>
+              <span class="hidden-md hidden-lg">
+                &nbsp;
+               {{'LANGUAGE' | translate }}
+               </span>
+            </a>
+          </li>
+          <li ui-sref-active="active" dropdown>
+            <a href="#" ui-sref="app.menu.about" dropdown-toggle>
+                <i class="fa fa-info-circle"></i>
+                {{'ABOUT_US' | translate }} <b class="caret"></b>
+            </a>
+            <ul ui-sref-active="active" class="dropdown-menu inverse-dropdown">
+              <li ui-sref-active="active">
+                <a href="#" ui-sref="app.menu.about.mission" ng-click="navCollapsed=true">
+                    <i class="fa fa-bullseye"></i>
+                    {{'MISSION' | translate }}
+                </a>
+              </li>
+              <li ui-sref-active="active">
+                <a href="#" ui-sref="app.menu.about.team" ng-click="navCollapsed=true">
+                    <i class="fa fa-users"></i>
+                    {{'TEAM' | translate }}
+                </a>
+              </li>
+              <li ui-sref-active="active">
+                <a href="#" ui-sref="app.menu.about.contact" ng-click="navCollapsed=true">
+                    <i class="fa fa-map-marker"></i>
+                    {{'CONTACT' | translate }}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        </div>
+      </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+</div>
+<!-- Menu end -->

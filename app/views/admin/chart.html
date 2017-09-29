@@ -1,0 +1,47 @@
+<div ng-controller="AdminChartCtrl">
+  <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+  <div class="info-row-admin">
+    <button class="btn btn-success" ng-click="save()">Запис</button>
+    <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
+  </div>
+  <div class="row" style="margin-top:10px;">
+    <div class="col-sm-12 col-md-7">
+      <chart-panel></chart-panel>
+    </div>
+    <div class="col-sm-12 col-md-5">
+      <form>
+        <div class="form-group">
+          <label>Заглавие на Български:</label>
+          <input type="text" class="form-control" placeholder="Заглавие" ng-model="chart.title.bg">
+        </div>
+        <div class="form-group">
+          <label>Заглавие на Английски:</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Заглавие на Английски" ng-model="chart.title.en">
+        </div>
+      </form>
+      <div ng-show="chart.type != 'chart-pie'">
+        <label>
+          <input type="radio" ng-model="chart.type" value="chart-bar">
+          Колонна
+        </label><br/>
+        <label>
+          <input type="radio" ng-model="chart.type" value="chart-line">
+          Линейна
+        </label><br/>
+      </div>
+      <label>
+        <input type="checkbox" ng-model="chart.legend">
+        Показване на легенда
+       </label><br/>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+         <button ng-show="chart.type != 'chart-pie'" ng-click="addColumn()">Добави колона</button>
+         <button ng-show="chart.type != 'chart-pie'" ng-click="removeColumn()">Изтриване колона</button>
+         <button ng-click="addRow()">Добави ред</button>
+         <button ng-click="removeRow()">Изтриване ред</button>
+      </div>
+    </div>
+    <div class="gridStyle" ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav class="grid" style="margin-top:10px;"></div>
+ </div>
+</div>

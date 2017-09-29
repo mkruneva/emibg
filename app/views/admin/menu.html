@@ -1,0 +1,71 @@
+<div ng-controller="AdminMenuCtrl" ng-init="checkLoggedIn()">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid, header-nav">
+        <div class="navbar-header">
+            <!-- <a ng-href="#" class="navbar-toggle" ui-sref="app.search.result({q:'',page:1})">
+              <i class="icon-search"></i>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> -->
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+        </div>
+    
+      <div id="navbar" >
+        <ul class="nav navbar-nav">
+          <li class="active" ui-sref-active="active">
+            <a href="https://emibgrhc-emibg.rhcloud.com/bg/home" ui-sref="app.menu.admin" ng-click="navCollapsed=true" target="_blank">
+                <i class="fa fa-home"></i>
+                {{'' | translate }} <!--doesnt seem to work when there is not text-->
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.admin.articles({page:1,published:'both',showCategories:'news,emis,summaries'})" ng-click="navCollapsed=true">
+                <i class="fa fa-file-text-o"></i>
+                {{'ARTICLES' | translate}}
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.admin.events({page: 1,published:'both'})" ng-click="navCollapsed=true">
+                <i class="fa fa-calendar"></i>
+                {{'EVENTS' | translate}}
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.admin.charts({page: 1})" ng-click="navCollapsed=true">
+                <i class="fa fa-bolt"></i>
+                {{'CHARTS' | translate}}
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.admin.homepage" ng-click="navCollapsed=true">
+                <i class="fa fa-home"></i>
+                {{'HOME_PAGE_CONFIGURATION' | translate}}
+            </a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+          <li class="pull-right">
+            <a href="#" ng-click="logout()">
+            </a>
+          </li>
+          <li class="pull-right">
+            <a href="#" ng-click="logout()">
+                Изход
+                <i class="fa fa-sign-out"></i>
+            </a>
+          </li>
+          <li class="pull-right">
+            <a href="#">
+              {{email}}
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+</div>
+<!-- Menu end -->

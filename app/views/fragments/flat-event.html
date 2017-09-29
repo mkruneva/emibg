@@ -1,0 +1,12 @@
+<div class="article-event flat" ui-sref=".event({ id: event.id })">
+    <div class="media">
+      <div class="media-left">
+          <emi-image image="event.image" width="120px" height="80px"></emi-image>
+      </div>
+      <div class="media-body gradient-container">
+        <h4 class="media-heading">{{event.title | lang | limitTo:80}}</h4>
+        <div class="gradient"></div>
+      </div>
+    </div>
+</div>
+

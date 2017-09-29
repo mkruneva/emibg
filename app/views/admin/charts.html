@@ -1,0 +1,47 @@
+<div ng-controller="AdminChartsCtrl">
+   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
+   <ui-view/>
+      <div class="info-row-admin-large">
+         <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-bar'})">Нова Линейна/Колонна диаграма</label>
+         <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-pie'})">Нова Кръгова диаграма</label>
+      </div>
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+           <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+          <li>
+            <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+   <div >
+       <div ng-repeat="rowCharts in charts" style="padding-bottom: 13px;" >
+          <div class="row">
+            <div class="col-sm-4 col-md-4" ng-repeat="chart in rowCharts">
+              <flat-admin-chart chart="chart"></flat-admin-chart>
+            </div>
+          </div>
+       </div>
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+           <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+          <li>
+            <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+   </div>
+</div>

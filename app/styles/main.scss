@@ -1,0 +1,72 @@
+@import 'vars';
+@import 'typography';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
+@import 'global-styles';
+@import 'loader';
+
+
+
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+}
+
+html,body {
+  height:100%;
+}
+
+#wrap {
+  min-height: 100%; 
+}
+
+.wrap {
+  min-height: 100%; 
+  //background-image: url(/images/emi-background.jpg);
+  background-color: #F8FAFB;
+  // background-color: #444;
+  background-size: cover;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:100px; /* this needs to be bigger than footer height*/
+}
+
+.text-snippet{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    max-height:200px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    content: "";
+    position:relative;
+}
+
+.text-snippet:before {
+    content:'';
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 150px, white);
+}
+
+.animate-if {
+  background:white;
+  padding:10px;
+}
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
