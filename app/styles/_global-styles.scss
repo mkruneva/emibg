@@ -66,6 +66,7 @@ a img:hover {
 
 
 
+
 /* Navbar */
 
 #navArea {
@@ -197,6 +198,7 @@ a img:hover {
 
 
 
+
 /* Navbar Search*/
 
 .navbar-toggle {
@@ -323,6 +325,7 @@ a img:hover {
 
 
 
+
 /* FOOTER */
 
 .footer {
@@ -430,17 +433,20 @@ p.ng-binding {
     padding-bottom: 5px;
 }
 
+div.team-container {
+    max-height: 800px;
+    overflow: hidden;
+    transition: 0.8s;
+    transition-timing-function: ease-in;
+}
+
+div.team-container.display-class {
+    max-height: 0px;
+}
+
 div.team-bio {
     border-top: 1px solid rgb(221, 221, 221);
     padding-top: 10px;
-    max-height: 500px;
-    overflow: hidden;
-    transition: 0.7s;
-}
-
-div.team-bio.my-class {
-    max-height: 0px;
-
 }
 
 .team-bio p {
@@ -1320,6 +1326,7 @@ input[type=password]:hover {
 
 
 
+
 /* NavBar Collapse Size*/
 
 @media (max-width: 991px) {
@@ -1399,6 +1406,7 @@ input[type=password]:hover {
     }
 }
 
-.css-class-add, .css-class-remove {
-  transition: all 1s ;
+.css-class-add,
+.css-class-remove {
+    transition: all 1s;
 }
