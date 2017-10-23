@@ -1,35 +1,40 @@
-
 <div ng-controller="AllTeamsCtrl">
-   <div ng-repeat="team in allTeams"> 
-      <div class="panel panel-default team">
-        <div class="panel-heading team">
-          <h3 class="panel-title">{{team.name | lang}} - <span>{{team.job | lang}}</span></h3>
-        </div>
-        <div class="panel-body">
-        
-          <p>
-            <a href="mailto:{{team.email | lang}}">
-                <span class="glyphicon glyphicon-envelope"></span>
-                &nbsp; {{team.email | lang}}
-            </a>
-          </p> 
-         
-          <p>
-            <a href="tel:{{team.phone | lang}}">
+    <div ng-repeat="team in allTeams">
+        <div class="panel panel-default team">
+            <div class="panel-heading team">
+                <div class="left">
+                    <h3 class="panel-title">{{team.name | lang}} - 
+                      <span>{{team.job | lang}}</span>
+                    </h3>
+                </div>
+                <div class="right" ng-click="expression">
+                  <a href="#">{{'BIO' | translate}}&nbsp;
+                    <i class="fa fa-chevron-down"></i>
+                  </a>
+                </div>  
+            </div>
+            <div class="panel-body">
+                <p>
+                    <a href="mailto:{{team.email | lang}}">
+                      <span class="glyphicon glyphicon-envelope"></span>
+                      &nbsp; {{team.email | lang}}
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:{{team.phone | lang}}">
               <span class="glyphicon glyphicon-earphone"></span>
               &nbsp;&nbsp;&nbsp;{{team.phone | lang}}
             </a>
-          </p>
-
-          <div class="team-bio">
-          <p>{{team.bio1 | lang}}</p>
-          <p>{{team.bio2 | lang}}</p>
-          <p>{{team.bio3 | lang}}</p>
-          <p>{{team.bio4 | lang}}</p>
-          <p>{{team.bio5 | lang}}</p>
-          <p>{{team.bio6 | lang}}</p>
-          </div>
+                </p>
+                <div class="team-bio">
+                    <p>{{team.bio1 | lang}}</p>
+                    <p>{{team.bio2 | lang}}</p>
+                    <p>{{team.bio3 | lang}}</p>
+                    <p>{{team.bio4 | lang}}</p>
+                    <p>{{team.bio5 | lang}}</p>
+                    <p>{{team.bio6 | lang}}</p>
+                </div>
+            </div>
         </div>
-      </div>
-   </div>
+    </div>
 </div>

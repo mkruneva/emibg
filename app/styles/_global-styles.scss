@@ -391,6 +391,7 @@ p.ng-binding {
   //background-color: #658ABC;
   background-color: $navbar-color;
   color: #fff;
+  min-height: 40px;
 }
 
 .panel-heading {
@@ -399,6 +400,24 @@ p.ng-binding {
   border-radius: 1px;
   
 }
+
+.panel-heading>div.right {
+    float:right;
+}
+
+.panel-heading>div.left {
+    float:left;
+}
+.panel-heading a {
+  color: #fff;
+}
+
+.panel-heading a:hover {
+  color: #fff;
+  font-weight: 900;
+}
+
+
 
 .pie-legend li span {
     border-radius: 1px !important;
