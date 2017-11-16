@@ -443,8 +443,9 @@ div.team-container.display-class {
     max-height: 0px;
 }
 
-i.fa-chevron-down {
-    transition: 0.8s;
+i.fa-chevron-down { 
+    transition-duration: 0.7s;
+    transition-delay: 0.1s;
 }
 
 i.fa-chevron-down.rotate-180 {
