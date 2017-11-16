@@ -12,8 +12,8 @@ function TeamService($q, $http) {
   var service = {};
 
   service.allTeams = function() {
-    console.log("team:" + data.teams);
-    return data.teams;
+    return $http.get("/api/teams")
+    .then(response => response.data);
   }
 
   return service;

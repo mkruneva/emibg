@@ -31,12 +31,7 @@
                         <div class="img-container">
                             <img alt="" ng-src="{{team.image}}">
                         </div>
-                        <p>{{team.bio1 | lang}}</p>
-                        <p>{{team.bio2 | lang}}</p>
-                        <p>{{team.bio3 | lang}}</p>
-                        <p>{{team.bio4 | lang}}</p>
-                        <p>{{team.bio5 | lang}}</p>
-                        <p>{{team.bio6 | lang}}</p>
+                        <div ng-bind-html="team.bio"></div>
                     </div>
                 </div>
             </div>
