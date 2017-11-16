@@ -93,7 +93,6 @@ var partners = [
      "site": "http://aes.bg/"
   },
 
-<!---->
 
   { 
     "type": "partner",

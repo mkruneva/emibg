@@ -12,8 +12,8 @@ function PartnerService($q, $http) {
   var service = {};
 
   service.allPartners = function() {
-    console.log("partniori:" + data.partners);
-    return data.partners;
+    return $http.get("/api/partners")
+    .then(response => response.data);
   }
 
   return service;
