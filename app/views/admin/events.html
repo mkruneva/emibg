@@ -10,7 +10,7 @@
        <label class="btn btn-danger" ui-sref="app.admin.newevent">Създаване на ново събитие</label>
       </div>
       <nav>
-        <ul class="pagination">
+        <ul class="pagination admin">
           <li>
             <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
               <span aria-hidden="true">&laquo;</span>
@@ -26,12 +26,12 @@
       </nav>
 
        <div ng-repeat="event in events">
-         <div class="col-sm-12 col-md-12">
+         <div class="col-sm-12 col-md-12 no-padding-lr">
             <flat-admin-event></flat-admin-event>
          </div>
        </div>
       <nav>
-        <ul class="pagination">
+        <ul class="pagination admin">
           <li>
             <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
               <span aria-hidden="true">&laquo;</span>

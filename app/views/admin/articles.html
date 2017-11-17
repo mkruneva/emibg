@@ -17,7 +17,7 @@
        <label class="btn btn-danger" ui-sref="app.admin.newarticle">Създаване на нова статия</label>
       </div>
       <nav>
-        <ul class="pagination">
+        <ul class="pagination admin">
           <li>
             <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
               <span aria-hidden="true">&laquo;</span>
@@ -33,13 +33,13 @@
       </nav>
 
       <div ng-repeat="article in articles">
-         <div class="col-sm-12 col-md-12">
+         <div class="col-sm-12 col-md-12 no-padding-lr">
             <flat-admin-article></flat-admin-article>
          </div>
       </div>
 
       <nav>
-        <ul class="pagination">
+        <ul class="pagination admin">
           <li>
             <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
               <span aria-hidden="true">&laquo;</span>
