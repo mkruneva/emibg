@@ -1,5 +1,5 @@
 <div ng-controller="AdminPartnersCtrl">
-	<!-- TEST -->
+    <!-- TEST -->
     <div style="color:green">
         <h1>{{'PARTNERS' | translate}} <span> {{testWord}}</span></h1>
     </div>
@@ -8,8 +8,27 @@
     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
     <div class="info-row-admin-large">
         <div class="admin btn-group">
-            <label class="btn btn-primary" ng-model="pertnerType.member" uib-btn-checkbox>Членове</label>
-            <label class="btn btn-primary" ng-model="pertnerType.partner" uib-btn-checkbox>Партньори</label>
+            <label class="btn btn-primary" ng-model="partnerType.member" uib-btn-checkbox>Членове</label>
+            <label class="btn btn-primary" ng-model="partnerType.partner" uib-btn-checkbox>Партньори</label>
         </div>
         <label class="btn btn-danger" ui-sref="app.admin.newpartner">Създаване на нов партньор</label>
+    </div>  
+    <div ng-repeat="partner in partners">
+        <div class="col-sm-12 col-md-12 no-padding-left">
+            <flat-admin-partner></flat-admin-partner>
+            <div class="flat-article-event admin">
+                <div class="media">
+                    <a class="media-left media-top" href="#" ui-sref="app.admin.partner({ id: partner.id })">
+                        <div class="media-object">
+                            <emi-image image="partner.tumb" width="140px" height="70px"></emi-image>
+                        </div>
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{partner.title | lang}}&nbsp;&nbsp;<span class="label label-danger" style="float:right; margin:2px;"><a href="#" ng-click="delete(partner.id)"><i class="fa fa-trash-o fa-lg"></i></a></span></h4>
+                        <p>{{partner.site}}</p>
+                        <p style="padding-top:2px; border-top:1px solid #E6E6E6;"><span style="color:#D9534F">{{partner.published ? "Публикувана" : "Непубликувана"}}</span>, Категории: {{partner.category}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
