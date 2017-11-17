@@ -186,13 +186,13 @@ url: '/summaries/{page:int}',
     data: { title: "CHARTS"}
   })
   .state('app.admin.partners', {
-    url: '/partners/{page:int}',
+    url: '/partners',
     templateUrl: 'admin/partners.html',
     data: { title: "PARTNERS"}
   })
-  .state('app.admin.team', {
-    url: '/team/{page:int}',
-    templateUrl: 'admin/team.html',
+  .state('app.admin.teams', {
+    url: '/teams',
+    templateUrl: 'admin/teams.html',
     data: { title: "TEAM"}
   })
   .state('app.admin.article', {
@@ -214,6 +214,26 @@ url: '/summaries/{page:int}',
     url: '/newevent',
     templateUrl: 'admin/event.html',
     data: { title: "EVENTS"}
+  })
+  .state('app.admin.partner', {
+    url: '/partner/{id:string}',
+    templateUrl: 'admin/partner.html',
+    data: { title: "PARTNER"}
+  })
+  .state('app.admin.newpartner', {
+    url: '/newpartner',
+    templateUrl: 'admin/partner.html',
+    data: { title: "PARTNER"}
+  })
+  .state('app.admin.team', {
+    url: '/team/{id:string}',
+    templateUrl: 'admin/team.html',
+    data: { title: "TEAM"}
+  })
+  .state('app.admin.newteam', {
+    url: '/newteam',
+    templateUrl: 'admin/team.html',
+    data: { title: "TEAM"}
   })
   .state('app.admin.chart', {
     url: '/chart/{id:string}',

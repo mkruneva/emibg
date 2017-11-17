@@ -4,7 +4,7 @@ var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
 function AdminTeamsCtrl($scope) {
-	$scope.testWord = 'test works';
+	$scope.testWord = 'OK!';
 }
 
 controllersModule.controller('AdminTeamsCtrl', AdminTeamsCtrl);

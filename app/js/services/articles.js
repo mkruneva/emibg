@@ -3,9 +3,7 @@
 var servicesModule = require('./_index.js');
 var _ = require('lazy.js');
 
-/**
- * @ngInject
- */
+
 function ArticleService($stateParams, $q, $http, Articles, ErrorHandling) {
 
   var service = {};

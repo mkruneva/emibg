@@ -1,0 +1,12 @@
+<div ng-controller="AdminTeamsCtrl">
+	<!-- TEST -->
+    <div style="color:green">
+        <h1>{{'TEAMS' | translate}} <span> {{testWord}}</span></h1>
+    </div>
+    <!-- END TEST -->
+    <ui-view/>
+    </uib-alert>
+    <div class="info-row-admin-large">
+        <label class="btn btn-danger" ui-sref="app.admin.newteam">Създаване на нов член от екипа</label>
+    </div>
+</div>

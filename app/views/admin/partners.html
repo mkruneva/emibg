@@ -1,6 +1,15 @@
 <div ng-controller="AdminPartnersCtrl">
-
-    <h1>{{'PARTNERS' | translate}}</h1>
-    <h3>{{testWord}}</h3>
-
-</div>
+	<!-- TEST -->
+    <div style="color:green">
+        <h1>{{'PARTNERS' | translate}} <span> {{testWord}}</span></h1>
+    </div>
+    <!-- END TEST  -->
+    <ui-view/>
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
+    <div class="info-row-admin-large">
+        <div class="admin btn-group">
+            <label class="btn btn-primary" ng-model="pertnerType.member" uib-btn-checkbox>Членове</label>
+            <label class="btn btn-primary" ng-model="pertnerType.partner" uib-btn-checkbox>Партньори</label>
+        </div>
+        <label class="btn btn-danger" ui-sref="app.admin.newpartner">Създаване на нов партньор</label>
+    </div>
