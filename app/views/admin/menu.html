@@ -16,7 +16,7 @@
       <div id="navbar" >
         <ul class="nav navbar-nav">
           <li class="active" ui-sref-active="active">
-            <a href="https://emibgrhc-emibg.rhcloud.com/bg/home" ui-sref="app.menu.admin" ng-click="navCollapsed=true" target="_blank">
+            <a ui-sref="app.admin" ng-click="navCollapsed=true">
                 <i class="fa fa-home"></i>
                 {{'' | translate }} <!--doesnt seem to work when there is not text-->
             </a>
@@ -37,6 +37,19 @@
             <a href="#" ui-sref="app.admin.charts({page: 1})" ng-click="navCollapsed=true">
                 <i class="fa fa-bolt"></i>
                 {{'CHARTS' | translate}}
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.admin.partners({page: 1})" ng-click="navCollapsed=true">
+                <i class="fa fa-bolt"></i>
+                {{'PARTNERS' | translate}}
+            </a>
+          </li>
+          
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.admin.team({page: 1})" ng-click="navCollapsed=true">
+                <i class="fa fa-bolt"></i>
+                {{'TEAM' | translate}}
             </a>
           </li>
           <li ui-sref-active="active">

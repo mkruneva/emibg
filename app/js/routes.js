@@ -185,6 +185,16 @@ url: '/summaries/{page:int}',
     templateUrl: 'admin/charts.html',
     data: { title: "CHARTS"}
   })
+  .state('app.admin.partners', {
+    url: '/partners/{page:int}',
+    templateUrl: 'admin/partners.html',
+    data: { title: "PARTNERS"}
+  })
+  .state('app.admin.team', {
+    url: '/team/{page:int}',
+    templateUrl: 'admin/team.html',
+    data: { title: "TEAM"}
+  })
   .state('app.admin.article', {
     url: '/article/{id:string}',
     templateUrl: 'admin/article.html',
