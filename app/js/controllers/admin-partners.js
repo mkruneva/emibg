@@ -23,8 +23,27 @@ function AdminPartnersCtrl($scope, $stateParams, $http) {
     };
 
     $scope.alerts = [];
-    $scope.showCategories = $stateParams.showCategories || "news,emis,summaries";
+    $scope.showCategories = "partners,members";
     $scope.partnerType = { partner: true, member: true };
+
+    var partnerTypeInitialEvent = true;
+    $scope.$watchCollection('partnerType', function() {
+    	console.log('partnerType is ', $scope.partnerType);
+        if (!partnerTypeInitialEvent) {
+            $scope.showCategories = "";
+            angular.forEach($scope.partnerType, function(value, key) {
+                if (value) {
+                    $scope.showCategories = $scope.showCategories + key + ",";
+                }
+            });
+            if ($scope.showCategories === "") {
+                $scope.showCategories = "some string that is not a category";
+            }
+            console.log('showCategories is ', $scope.showCategories);
+            fetchPartners();
+        }
+        partnerTypeInitialEvent = false;
+    });
 
     fetchPartners();
 
