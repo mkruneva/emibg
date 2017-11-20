@@ -18,32 +18,46 @@
                     <!-- may need to change width height -->
                 </div>
             </form>
-            <!-- <p>
-                <label>Име:</label>
-                <h3><b>
-            		<input type="text" class="form-control" placeholder="Име на Български" 
-            		ng-model="team.name.bg"></b>
-        		</h3>
-            </p> -->
-            <div class="form-group">
-                <label>Име:</label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Име на Български" ng-model="team.name.bg">
+            <div class="form-group row">
+                <div class="col-xs-4">
+                    <!-- <div class="form-group" style="margin-right:20px;"> -->
+                    <label>Позиция в списъка:</label>
+                    <input type="number" min="1" max="30" class="form-control" placeholder="Позиция" ng-model="team.localId">
+                </div>
+                <div class="col-xs-8">
+                    <label>Email:</label>
+                    <input type="Email" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Ел.поща" ng-model="team.email">
+                </div>
             </div>
-            <div class="form-group">
-                <label>Професия:</label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Професия на Български" ng-model="team.job.bg">
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label>Име:</label>
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Име на Български" ng-model="team.name.bg">
+                </div>
+                <div class="col-xs-6">
+                    <label>Име на Английски:</label>
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Име на Английски" ng-model="team.name.en">
+                </div>
             </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="Email" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Професия на Български" ng-model="team.email">
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label>Професия:</label>
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Професия на Български" ng-model="team.job.bg">
+                </div>
+                <div class="col-xs-6">
+                    <label>Професия на Английски:</label>
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Професия на Английски" ng-model="team.job.en">
+                </div>
             </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="Email" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Ел.поща" ng-model="team.email">
-            </div>
-            <div class="form-group">
-                <label>Телефон:</label>
-                <input type="tel" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Телефон за България" ng-model="team.phone.bg">
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label>Телефон:</label>
+                    <input type="tel" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Телефон за България" ng-model="team.phone.bg">
+                </div>
+                <div class="col-xs-6">
+                    <label>Телефон за Чужбина:</label>
+                    <input type="tel" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Телефон за Чужбина" ng-model="team.phone.en">
+                </div>
             </div>
             <md-divider></md-divider>
             <div class="form-group">
@@ -51,25 +65,12 @@
                 <div style="height:250px; border:1px solid #ec7373;"></div>
                 <!-- <div style="height:400px" ui-tinymce="htmlBgOptions" ng-model="html.bg"></div> -->
             </div>
-            <div class="form-group">
-                <label>Име на Английски:</label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Име на Английски" ng-model="team.name.en">
-            </div>
-            <div class="form-group">
-                <label>Професия на Английски:</label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Професия на Английски" ng-model="team.job.en">
-            </div>
-            <div class="form-group">
-                <label>Телефон за Чужбина:</label>
-                <input type="tel" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Телефон за Чужбина" ng-model="team.phone.en">
-            </div>
             <md-divider></md-divider>
             <div class="form-group">
                 <label>Биография на Английски:</label>
                 <div style="height:250px; border:1px solid #ec7373;"></div>
                 <!-- <div style="height:400px" ui-tinymce="htmlEnOptions" ng-model="html.en"></div> -->
             </div>
-            
         </uib-tab>
         <uib-tab heading="Изглед">
             <!-- something -->
