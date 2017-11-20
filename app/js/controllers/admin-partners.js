@@ -48,9 +48,9 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
 
     // end Filetercategory 
 
-
     $scope.delete = function(id) {
         $scope.alerts = [];
+        console.log($http.delete("/api/partners/delete/" + id, EmiAuth.addAuthHeader({})));
         $http.delete(
                 "/api/partners/delete/" + id,
                 EmiAuth.addAuthHeader({})

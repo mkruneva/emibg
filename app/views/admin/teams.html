@@ -1,6 +1,6 @@
 <div ng-controller="AdminTeamsCtrl">
     <ui-view/>
-    </uib-alert>
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
     <div class="info-row-admin-large">
         <label class="btn btn-danger" ui-sref="app.admin.newteam">Създаване на нов член от екипа</label>
     </div>
