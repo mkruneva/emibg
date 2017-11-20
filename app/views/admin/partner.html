@@ -1,5 +1,30 @@
 <div ng-controller="AdminPartnerCtrl">
-    <!-- test -->
-    <h1>{{testWord}}</h1>
-    <!-- end test -->
+
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    <div class="info-row-admin">
+        <button class="btn btn-success" ng-click="save()">Запис</button>
+        <div class="btn-group">
+            <label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" ng-model="partnerType" value="member">&nbsp;Член&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" ng-model="partnerType" value="partner">&nbsp;Партньор&nbsp;&nbsp;</label>
+        </div>
+        <div class="btn-group">
+            <input type="checkbox" ng-model="partner.published">&nbsp;Публикуван</label>
+        </div>
+        <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
+    </div>
+    <uib-tabset>
+
+    <uib-tab heading="Редакция">
+
+    </uib-tab>
+
+
+
+
+    <uib-tab heading="Изглед">
+		<!-- something -->
+    </uib-tab>
+
 </div>
