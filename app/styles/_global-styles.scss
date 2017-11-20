@@ -1157,6 +1157,16 @@ button {
     color: #fff;
 }
 
+// admin menu email link 
+
+a.non-active {
+    cursor: default;
+}
+
+.navbar-nav > li > a.non-active:hover, .navbar-inverse .navbar-nav > li > a.non-active:focus {
+    background-color: inherit;
+}
+
 //login screen 
 .loginmodal-container {
     padding: 30px;
