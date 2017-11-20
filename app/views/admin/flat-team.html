@@ -1,0 +1,14 @@
+<div class="flat-article-event admin">
+    <div class="media">
+        <a class="media-left media-top" href="#" ui-sref="app.admin.team({ id: team.id })">
+            <div class="media-object">
+                <emi-image image="team.image" width="140px" height="70px"></emi-image>
+            </div>
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">{{team.name | lang}}&nbsp;-&nbsp;<span style="font-size:0.9em;">{{team.job | lang}}</span>&nbsp;<span class="label label-danger" style="float:right; margin:2px;"><a href="#" ng-click="delete(team.id)"><i class="fa fa-trash-o fa-lg"></i></a></span></h4>
+            <p>{{team.bio | lang | htmlToPlainText | limitTo: 130}} ...</p>
+            <p style="padding-top:2px; border-top:1px solid #E6E6E6;"><span style="color:#D9534F">{{team.published ? "Публикуван" : "Непубликуван"}}</span>, Позиция: {{team.localId}}</p>
+        </div>
+    </div>
+</div>

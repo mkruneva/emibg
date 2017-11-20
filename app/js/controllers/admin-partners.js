@@ -14,7 +14,7 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
             )
             .then(function(response) {
                 $scope.partners = response.data;
-                console.log(response.data);
+                //console.log('Partners are ', response.data);
             })
             .catch(function(err) {
                 $scope.alerts.push({ type: 'danger', msg: "Не е възможно да се покажат партньорите. Моля опитайте след малко." });
@@ -29,7 +29,7 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
     // Filetercategory - Needs to be fixed 
     var partnerTypeInitialEvent = true;
     $scope.$watchCollection('partnerType', function() {
-        console.log('partnerType is ', $scope.partnerType);
+        //console.log('partnerType is ', $scope.partnerType);
         if (!partnerTypeInitialEvent) {
             $scope.showCategories = "";
             angular.forEach($scope.partnerType, function(value, key) {
@@ -40,7 +40,7 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
             if ($scope.showCategories === "") {
                 $scope.showCategories = "some string that is not a category";
             }
-            console.log('showCategories is ', $scope.showCategories);
+            //console.log('showCategories is ', $scope.showCategories);
             fetchPartners();
         }
         partnerTypeInitialEvent = false;
