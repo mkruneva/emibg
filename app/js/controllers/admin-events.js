@@ -32,7 +32,7 @@ function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService, Emi
     )
     .then(response => {
       $scope.events = $scope.events.filter(event => event.id != id);
-      $scope.alerts.push({type: 'success', msg: "Събитието е успешно изтрито!<a href='#' ng-click=\"restore('" + id + "')\">UNDO</a>"});
+      $scope.alerts.push({type: 'success', msg: "Събитието е успешно изтрито!&nbsp;&nbsp; <a href='#' class='btn btn-info btn-small' ng-click=\"restore('" + id + "')\">UNDO</a>" });
     })
     .catch(err => {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се изтрие събитието. Моля опитайте след малко."});

@@ -37,7 +37,7 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $
     )
     .then(response => {
       $scope.articles = $scope.articles.filter(article => article.id != id);
-      $scope.alerts.push({type: 'success', msg: "Статията е успешно изтрита!<a href='#' ng-click=\"restore('" + id + "')\">UNDO</a>"});
+      $scope.alerts.push({type: 'success', msg: "Статията е успешно изтрита! &nbsp;&nbsp; <a href='#' class='btn btn-info btn-small' ng-click=\"restore('" + id + "')\">UNDO</a>" });
     })
     .catch(err => {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се изтрие статията. Моля опитайте след малко."});

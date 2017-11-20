@@ -40,7 +40,7 @@ function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService, Emi
         $scope.alerts.push({type: 'danger', msg: "Не е възможно да се изтрие графиката. Грешка: " + response.data.error.message});
       } else {
         $scope.charts = _($scope.charts).flatten().filter(ch => ch.id != id).chunk(3).toArray();
-        $scope.alerts.push({type: 'success', msg: "Графиката е успешно изтрита!<a href='#' ng-click=\"restore('" + id + "')\">UNDO</a>"});
+        $scope.alerts.push({type: 'success', msg: "Графиката е успешно изтрита! &nbsp;&nbsp; <a href='#' class='btn btn-info btn-small' ng-click=\"restore('" + id + "')\">UNDO</a>" });
       }
     })
     .catch(err => {
