@@ -13,7 +13,11 @@
                 </span>
             </h4>
             <p>{{team.bio | lang | htmlToPlainText | limitTo: 130}} ...</p>
-            <p style="padding-top:2px; border-top:1px solid #E6E6E6;"><span style="color:#D9534F">{{team.published ? "Публикуван" : "Непубликуван"}}</span>, Позиция: {{team.localId}}</p>
+            <p style="padding-top:2px; border-top:1px solid #E6E6E6;">
+                <span style="color:#D9534F">{{team.published ? "Публикуван" : "Непубликуван"}}</span>
+                , Позиция: {{team.localId}}
+                <span style="color:green">{{team.deleted ? "Изтрит" : "Неизтрит"}}</span> <!-- Test only -->
+            </p>
         </div>
     </div>
 </div>
