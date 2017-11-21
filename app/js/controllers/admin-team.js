@@ -3,20 +3,47 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-function AdminTeamCtrl($scope, $rootScope, $stateParams, $sce, TeamService, ErrorHandling) {
+function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, TeamService, EmiAuth, ErrorHandling) {
 
     $scope.alerts = [];
     $scope.previousState = $rootScope.previousState;
     $scope.previousStateParams = $rootScope.previousStateParams;
 
     $scope.cancel = function() {
-        console.log('Cancel ckicked');
+        if ($rootScope.previousState) {
+            $state.go($scope.previousState, $scope.previousStateParams);
+        } else {
+            $state.go("app.admin.teams");
+        }
     }
 
     // var nullify
 
     $scope.save = function() {
         console.log('Save clicked');
+
+        $scope.alerts = [];
+
+        // nullify ?? 
+
+        $scope.team.bio = $scope.bio;
+
+        var method = $http.post;
+        var url = "/api/teams";
+        if ($scope.team.id) {
+            method = $http.put;
+            url = "/api/teams/" + $scope.team.id;
+        }
+        ErrorHandling.handle(method(url, $scope.team, EmiAuth.addAuthHeader({})))
+            .then(function(data) {
+                $scope.team = data;
+                $scope.bio = data.bio;
+                $scope.alerts.push({ type: 'success', msg: $sce.trustAsHtml("Екипът е записан успешно") });
+            })
+            .catch(function(err) {
+                $scope.alerts.push({ type: 'danger', msg: "Не е възможно да се запише екипът в момента. Моля опитайте отново. " + err });
+                console.log(err);
+            });
     }
 
     $scope.closeAlert = function(index) {
@@ -45,6 +72,8 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $sce, TeamService, Erro
         };
         return options;
     }
+
+    var editor = null;
 
     // Bio Html options
     var htmlOptions = function(updateProperty) {
