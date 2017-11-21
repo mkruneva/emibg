@@ -7,7 +7,7 @@ var _ = require('lazy.js');
 /**
  * @ngInject
  */
-function TeamService($q, $http) {
+function TeamService($q, $http, ErrorHandling) {
 
   var service = {};
 
@@ -15,6 +15,10 @@ function TeamService($q, $http) {
     return $http.get("/api/teams")
     .then(response => response.data);
   }
+
+  service.team = function(id) {
+    return ErrorHandling.handle($http.get("/api/teams/" + id));
+  };
 
   return service;
 }
