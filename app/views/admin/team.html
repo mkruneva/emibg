@@ -12,8 +12,8 @@
         <uib-tab heading="Редакция">
             <form>
                 <div class="form-group">
-                    <!-- <image-picker image="team.image" width="400px" , height="300px" />  -->
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Изберете Изображение&w=400&h=300" width="400px" , height="300px" alt="">
+                    <!-- <image-picker image="team.image" wwidth="400px" , height="300px" />  -->
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Изберете Изображение&w=400&h=300" width="400px" , height="300px" style="border:1px solid #ec7373;" alt="">
                     <!-- PLACEHOLDER -->
                     <!-- may need to change width height -->
                 </div>
@@ -60,15 +60,15 @@
                 </div>
             </div>
             <md-divider></md-divider>
-            <div class="form-group">
+            <div class="form-group" style="padding-top: 20px;">
                 <label>Биография</label>
-                <div style="height:250px; border:1px solid #ec7373;"></div>
-                <!-- <div style="height:400px" ui-tinymce="htmlBgOptions" ng-model="bio.bg"></div> -->
+                <div style="height:250px; border:1px solid green;" ui-tinymce="bioBgOptions" ng-model="bio.bg">bla bla</div>
+                <!-- <div style="height:400px" ui-tinymce="htmlBgOptions" ng-model="bio.bg"></div> -->  
             </div>
             <md-divider></md-divider>
-            <div class="form-group">
+            <div class="form-group" style="padding-top: 20px;">
                 <label>Биография на Английски:</label>
-                <div style="height:250px; border:1px solid #ec7373;"></div>
+                <div style="height:250px; border:1px solid green;" ui-tinymce="bioEnOptions" ng-model="bio.en">bla bla</div>
                 <!-- <div style="height:400px" ui-tinymce="htmlEnOptions" ng-model="bio.en"></div> -->
             </div>
         </uib-tab>
