@@ -70,6 +70,22 @@ a img:hover {
 
 
 
+
+/* Home page left and right colums */
+
+div.home-left-col {
+    padding-right: 10px;
+}
+
+div.home-right-col {
+    padding-left: 10px;
+}
+
+
+
+
+
+
 /* Navbar */
 
 #navArea {
@@ -202,6 +218,9 @@ a img:hover {
 
 
 
+
+
+
 /* Navbar Search*/
 
 .navbar-toggle {
@@ -304,7 +323,7 @@ a img:hover {
 
 //Navbar collapse icons 
 .navbar-collapse-search {
-    padding-bottom: 8px;
+    padding-bottom: 3px;
     padding-top: 7px;
 }
 
@@ -328,6 +347,9 @@ a img:hover {
     float: left;
     width: 100%;
 }
+
+
+
 
 
 
@@ -450,7 +472,7 @@ div.team-container.display-class {
     max-height: 0px;
 }
 
-i.fa-chevron-down { 
+i.fa-chevron-down {
     transition-duration: 0.7s;
     transition-delay: 0.1s;
 }
@@ -1079,6 +1101,29 @@ footer .sociallink_nav li:nth-child(5)>a:hover {
 }
 
 
+
+
+
+
+/* video */
+
+.video-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 75%;
+    margin-top: 20px;
+}
+
+.video-container>iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 //Admin style
 .admin .btn-primary {
     background-color: #2A435A;
@@ -1158,19 +1203,17 @@ button {
 }
 
 // admin menu email link 
-
 a.non-active {
     cursor: default;
 }
 
-.navbar-nav > li > a.non-active:hover, .navbar-inverse .navbar-nav > li > a.non-active:focus {
+.navbar-nav>li>a.non-active:hover,
+.navbar-inverse .navbar-nav>li>a.non-active:focus {
     background-color: inherit;
 }
 
 
-.form-group.row {
-    
-}
+.form-group.row {}
 
 
 //login screen 
@@ -1366,9 +1409,38 @@ chart-panel .panel-body:hover {
 
 
 
+
+
+
 /* NavBar Collapse Size*/
 
 @media (max-width: 991px) {
+
+
+    #wrap>#main.container {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    #main .home-content {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    div.home-left-col {
+        padding-right: 15px;
+    }
+
+    div.home-right-col {
+        padding-left: 15px;
+    }
+
+    .footer {
+        padding: 12px 0;
+    }
 
     .single_post_content.events h2 {
         font-size: 21px;
