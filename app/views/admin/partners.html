@@ -2,13 +2,16 @@
     <ui-view/>
     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
     <div class="info-row-admin-large">
-        <div class="admin btn-group">
-            <label class="btn btn-primary" ng-model="partnerType.member" uib-btn-checkbox>Членове</label>
-            <label class="btn btn-primary" ng-model="partnerType.partner" uib-btn-checkbox>Партньори</label>
-        </div>
         <label class="btn btn-danger" ui-sref="app.admin.newpartner">Създаване на нов партньор</label>
     </div>
-    <div ng-repeat="partner in partners">
+    <h2 class="admin-partners"><span>Членове</span></h2>
+    <div ng-repeat="partner in partners | filter:{ type: 'member'} : true | orderBy:'localId'">
+        <div class="col-sm-12 col-md-12 no-padding-lr">
+            <flat-admin-partner></flat-admin-partner>
+        </div>
+    </div>
+    <h2 class="admin-partners"><span>Партньори</span></h2>
+    <div ng-repeat="partner in partners | filter:{ type: 'partner'} : true | orderBy:'localId'">
         <div class="col-sm-12 col-md-12 no-padding-lr">
             <flat-admin-partner></flat-admin-partner>
         </div>
