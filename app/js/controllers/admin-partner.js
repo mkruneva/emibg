@@ -3,7 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-function AdminPartnerCtrl($scope) {
+function AdminPartnerCtrl($scope, $stateParams, PartnerService) {
     // test
     $scope.testWord = 'AdminPartnerCtrl';
     // test end
@@ -26,13 +26,30 @@ function AdminPartnerCtrl($scope) {
     };
 
 
-    //// 
-    ////
-    ////
-
     var init = function(partner) {
         $scope.partner = partner;
+    }
 
+    if ($stateParams.id) {
+        PartnerService.partner($stateParams.id)
+            .then(init)
+            .catch(err => $scope.alerts.push({ type: 'danger', msg: err + "" }));
+    } 
+    else {
+        init({
+            title: { bg: '', en: '' },
+            localId: '',
+            site: '',
+            // image: {
+            //     config: {
+            //         fill: true,
+            //         horizontalalign: "center",
+            //         verticalalign: "center"
+            //     }
+            // },
+            published: false,
+            deleted: false
+        });
     }
 
 

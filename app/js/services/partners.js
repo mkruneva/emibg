@@ -7,7 +7,7 @@ var _ = require('lazy.js');
 /**
  * @ngInject
  */
-function PartnerService($q, $http) {
+function PartnerService($q, $http, ErrorHandling) {
 
   var service = {};
 
@@ -15,6 +15,10 @@ function PartnerService($q, $http) {
     return $http.get("/api/partners")
     .then(response => response.data);
   }
+
+  service.partner = function(id) {
+    return ErrorHandling.handle($http.get("/api/partners/" + id));
+  };
 
   return service;
 }

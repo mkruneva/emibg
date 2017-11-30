@@ -4,9 +4,9 @@
         <button class="btn btn-success" ng-click="save()">Запис</button>
         <div class="btn-group">
             <label>&nbsp;&nbsp;&nbsp;
-                <input type="radio" ng-model="type" value="member">&nbsp;Член&nbsp;&nbsp;</label>
+                <input type="radio" ng-model="partner.type" value="member">&nbsp;Член&nbsp;&nbsp;</label>
             <label>
-                <input type="radio" ng-model="type" value="partner">&nbsp;Партньор&nbsp;&nbsp;</label>
+                <input type="radio" ng-model="partner.type" value="partner">&nbsp;Партньор&nbsp;&nbsp;</label>
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 <input type="checkbox" ng-model="partner.published">&nbsp;&nbsp;Публикуван</label>
         </div>
@@ -16,8 +16,8 @@
         <uib-tab heading="Редакция">
             <form>
                 <div class="form-group">
-                    <!-- <image-picker image="team.image" wwidth="400px" , height="300px" />  -->
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Изберете Изображение&w=400&h=300" width="400px" , height="300px" style="border:1px solid #ec7373;" alt="">
+                    <!-- <image-picker image="team.image" wwidth="400px" , height="200px" />  -->
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Изберете Изображение&w=400&h=300" width="400px" , height="200px" style="border:1px solid #ec7373; " alt="">
                     <!-- PLACEHOLDER -->
                     <!-- may need to change width height -->
                 </div>
