@@ -32,12 +32,12 @@
 
       <!-- News   -->
       <div class="row">
-        <div class="col-sm-6 col-md-6">
+        <div class="col-sm-6 col-md-6 home-left-col">
             <div ng-repeat="article in mainNews">
                 <tile-article/>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6">
+        <div class="col-sm-6 col-md-6 home-right-col">
             <div ng-repeat="article in news">
                <flat-article/>
             </div>
@@ -46,12 +46,12 @@
 
       <!-- News Placeholder  -->
       <div class="row" ng-show="!loaded">
-        <div class="col-sm-6 col-md-6">
+        <div class="col-sm-6 col-md-6 home-left-col">
           <div class="thumbnail">
             <div class="loader-m"></div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-6">
+        <div class="col-sm-6 col-md-6 home-right-col">
             <div class="flat"><div class="loader-s"></div></div>
             <div class="flat"><div class="loader-s"></div></div>
             <div class="flat"><div class="loader-s"></div></div>
@@ -63,7 +63,7 @@
 
       <br/>
       <div class="row">
-          <div class="col-sm-6 col-md-6">
+          <div class="col-sm-6 col-md-6 home-left-col">
             <a href="#" ui-sref="app.menu.analysis.emis({page: 1})" ng-click="scrollToTop()">
               <h2 class="home-analysis">
                 <span>{{'ANALYSIS' | translate }}</span>
@@ -92,7 +92,7 @@
           <!-- END Analysis Placeholder-->
 
         </div>
-          <div class="col-sm-6 col-md-6">
+          <div class="col-sm-6 col-md-6 home-right-col">
             <a href="#" ui-sref="app.menu.events({page: 1})" ng-click="scrollToTop()">
               <h2 class="home-events">
                 <span>{{'EVENTS' | translate }}</span>

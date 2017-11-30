@@ -20,7 +20,6 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, Te
     // var nullify
 
     $scope.save = function() {
-        console.log('Save clicked');
 
         $scope.alerts = [];
 

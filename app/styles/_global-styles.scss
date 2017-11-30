@@ -1430,14 +1430,6 @@ chart-panel .panel-body:hover {
         margin-right: -8px;
     }
 
-    div.home-left-col {
-        padding-right: 15px;
-    }
-
-    div.home-right-col {
-        padding-left: 15px;
-    }
-
     .footer {
         padding: 12px 0;
     }
@@ -1502,6 +1494,14 @@ chart-panel .panel-body:hover {
 }
 
 @media (max-width: 767px) {
+
+    div.home-left-col {
+        padding-right: 15px;
+    }
+
+    div.home-right-col {
+        padding-left: 15px;
+    }
 
     .thumbnail {
         margin-bottom: 10px;
