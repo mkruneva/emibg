@@ -23,28 +23,30 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
     };
 
     $scope.alerts = [];
-    $scope.showCategories = "partners,members";
-    $scope.partnerType = { partner: true, member: true };
 
-    // Filetercategory - Needs to be fixed 
-    var partnerTypeInitialEvent = true;
-    $scope.$watchCollection('partnerType', function() {
-        //console.log('partnerType is ', $scope.partnerType);
-        if (!partnerTypeInitialEvent) {
-            $scope.showCategories = "";
-            angular.forEach($scope.partnerType, function(value, key) {
-                if (value) {
-                    $scope.showCategories = $scope.showCategories + key + ",";
-                }
-            });
-            if ($scope.showCategories === "") {
-                $scope.showCategories = "some string that is not a category";
-            }
-            //console.log('showCategories is ', $scope.showCategories);
-            fetchPartners();
-        }
-        partnerTypeInitialEvent = false;
-    });
+    
+    // $scope.showCategories = "partners,members";
+    // $scope.partnerType = { partner: true, member: true };
+
+    // // Filetercategory - Needs to be fixed 
+    // var partnerTypeInitialEvent = true;
+    // $scope.$watchCollection('partnerType', function() {
+    //     //console.log('partnerType is ', $scope.partnerType);
+    //     if (!partnerTypeInitialEvent) {
+    //         $scope.showCategories = "";
+    //         angular.forEach($scope.partnerType, function(value, key) {
+    //             if (value) {
+    //                 $scope.showCategories = $scope.showCategories + key + ",";
+    //             }
+    //         });
+    //         if ($scope.showCategories === "") {
+    //             $scope.showCategories = "some string that is not a category";
+    //         }
+    //         //console.log('showCategories is ', $scope.showCategories);
+    //         fetchPartners();
+    //     }
+    //     partnerTypeInitialEvent = false;
+    // });
 
     // end Filetercategory 
 
