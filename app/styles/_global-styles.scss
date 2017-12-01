@@ -1392,6 +1392,26 @@ h2.admin-partners {
     margin-bottom: 4%;
 }
 
+emi-image.img-thumbnail {
+    display: block;
+    background-color: lightgray; 
+}
+
+emi-image.img-thumbnail.partners {
+    width:160px;
+    height:80px;
+}
+
+.admin emi-image.img-thumbnail.partners {
+    width:140px;
+    height:70px;
+}
+
+.admin emi-image.img-thumbnail.teams {
+    width:70px;
+    height:140px;
+}
+
 
 ///////////////////
 [ng\:cloak],
