@@ -12,7 +12,8 @@ function TeamService($q, $http, ErrorHandling) {
   var service = {};
 
   service.allTeams = function() {
-    return $http.get("/api/teams")
+  	var filterUrl = encodeURIComponent(JSON.stringify({"where":{"published":true,"deleted":false}}));
+    return $http.get("/api/teams?filter=" + filterUrl)
     .then(response => response.data);
   }
 
@@ -24,4 +25,3 @@ function TeamService($q, $http, ErrorHandling) {
 }
 
 servicesModule.service('TeamService', TeamService);
-
