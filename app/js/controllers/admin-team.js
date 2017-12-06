@@ -122,7 +122,7 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, Te
             job: { bg: '', en: '' },
             phone: { bg: '', en: '' },
             bio: { bg: '', en: '' },
-            localId: '',
+            localId: 10,
             email: '',
             image: {
                 config: {

@@ -4,9 +4,6 @@ var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
 function AdminPartnerCtrl($scope, $rootScope, $state, $stateParams, $http, $sce, PartnerService, EmiAuth, ErrorHandling) {
-    // test
-    $scope.testWord = 'AdminPartnerCtrl';
-    // test end
 
     $scope.alerts = [];
 
@@ -58,17 +55,18 @@ function AdminPartnerCtrl($scope, $rootScope, $state, $stateParams, $http, $sce,
             .then(init)
             .catch(err => $scope.alerts.push({ type: 'danger', msg: err + "" }));
     } else {
+
         init({
             title: { bg: '', en: '' },
-            localId: '',
+            localId: 10,
             site: '',
-            // image: {
-            //     config: {
-            //         fill: true,
-            //         horizontalalign: "center",
-            //         verticalalign: "center"
-            //     }
-            // },
+            image: {
+                config: {
+                    fill: true,
+                    horizontalalign: "center",
+                    verticalalign: "center"
+                }
+            },
             published: false,
             deleted: false
         });

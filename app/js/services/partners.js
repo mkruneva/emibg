@@ -14,6 +14,7 @@ function PartnerService($q, $http, ErrorHandling) {
   service.allPartners = function() {
   	var filterUrl = encodeURIComponent(JSON.stringify({"where":{"published":true,"deleted":false}}));
     return $http.get("/api/partners?filter=" + filterUrl)
+    //return $http.get("/api/partners")
     .then(response => response.data);
   }
 
