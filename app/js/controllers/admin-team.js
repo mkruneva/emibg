@@ -83,7 +83,7 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, Te
                     'insertdatetime media nonbreaking save table contextmenu directionality',
                     'template textcolor colorpicker textpattern'
                 ],
-                toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link google_tools image | print preview media | forecolor',
+                toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | print preview media | forecolor',
                 image_caption: true,
                 image_advtab: true,
                 language: "bg",
@@ -124,13 +124,13 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, Te
             bio: { bg: '', en: '' },
             localId: '',
             email: '',
-            // image: {
-            //     config: {
-            //         fill: true,
-            //         horizontalalign: "center",
-            //         verticalalign: "center"
-            //     }
-            // },
+            image: {
+                config: {
+                    fill: true,
+                    horizontalalign: "center",
+                    verticalalign: "center"
+                }
+            },
             published: false,
             deleted: false
         });
