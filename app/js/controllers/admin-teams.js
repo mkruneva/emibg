@@ -8,9 +8,9 @@ function AdminTeamsCtrl($scope, $stateParams, $state, $http, EmiAuth) {
 
     var fetchTeams = function() {
         $scope.alerts = [];
-        $http.get(
-                "/api/teams/"
-            )
+
+        var filterUrl = encodeURIComponent(JSON.stringify({"where":{"deleted":false}}));  //show only not deleted teams
+        $http.get("/api/teams/?filter=" + filterUrl)
             .then(function(response) {
                 $scope.teams = response.data;
             })
