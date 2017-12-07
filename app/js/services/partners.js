@@ -9,21 +9,18 @@ var _ = require('lazy.js');
  */
 function PartnerService($q, $http, ErrorHandling) {
 
-  var service = {};
+    var service = {};
 
-  service.allPartners = function() {
-  	var filterUrl = encodeURIComponent(JSON.stringify({"where":{"published":true,"deleted":false}}));
-    return $http.get("/api/partners?filter=" + filterUrl)
-    //return $http.get("/api/partners")
-    .then(response => response.data);
-  }
+    service.allPartners = function() {
+        var filterUrl = encodeURIComponent(JSON.stringify({ "where": { "published": true, "deleted": false } }));
+        return ErrorHandling.handle($http.get("/api/partners?filter=" + filterUrl));
+    }
 
-  service.partner = function(id) {
-    return ErrorHandling.handle($http.get("/api/partners/" + id));
-  };
+    service.partner = function(id) {
+        return ErrorHandling.handle($http.get("/api/partners/" + id));
+    };
 
-  return service;
+    return service;
 }
 
 servicesModule.service('PartnerService', PartnerService);
-

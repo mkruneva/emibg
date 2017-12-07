@@ -1,38 +1,35 @@
 <div ng-controller="AllPartnersCtrl">
-	<div class="single_post_content partners">
-		<h2><span>{{'MEMBERS' | translate }}</span></h2>
-		<div ng-repeat="partner in members">
-			<div class="article-event flat partner">
-				  <div class="media">
-				      <a class="media-left" ng-href= "{{partner.site}}" target="_blank">
-				        <emi-image image="partner.image" width="160px" height="80px"></emi-image>
-				      </a>
-				      <div class="media-body"  ng-href= "{{partner.site}}" target="_blank">
-				        <a ng-href= "{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
-				      </div>
-				  </div>
-			  </div>
-		</div>
-	</div>
-	<div class="single_post_content members">
-		<h2><span>{{'PARTNERS' | translate }}</span></h2>
-		<div ng-repeat="partner in partners">
-			<div class="article-event flat partner">
-				  <div class="media">
-				      <a class="media-left" ng-href= "{{partner.site}}" target="_blank">
-				        <emi-image image="partner.image" width="160px" height="80px"></emi-image>
-				        <!-- ratio 2:1 + 10px -->
-				      </a>
-				      <div class="media-body"  ng-href= "{{partner.site}}" target="_blank">
-				        <a ng-href= "{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
-				      </div>
-				  </div>
-			 </div>
-		</div>
-	</div>
-</div> 
-
-
-
-
-
+    <div class="single_post_content partners">
+        <h2><span>{{'MEMBERS' | translate }}</span></h2>
+        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+        <div ng-repeat="partner in members">
+            <div class="article-event flat partner">
+                <div class="media">
+                    <a class="media-left" ng-href="{{partner.site}}" target="_blank">
+                        <emi-image image="partner.image" width="160px" height="80px"></emi-image>
+                    </a>
+                    <div class="media-body" ng-href="{{partner.site}}" target="_blank">
+                        <a ng-href="{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="single_post_content members">
+        <h2><span>{{'PARTNERS' | translate }}</span></h2>
+        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+        <div ng-repeat="partner in partners">
+            <div class="article-event flat partner">
+                <div class="media">
+                    <a class="media-left" ng-href="{{partner.site}}" target="_blank">
+                        <emi-image image="partner.image" width="160px" height="80px"></emi-image>
+                        <!-- ratio 2:1 + 10px -->
+                    </a>
+                    <div class="media-body" ng-href="{{partner.site}}" target="_blank">
+                        <a ng-href="{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

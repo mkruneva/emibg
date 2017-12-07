@@ -9,19 +9,18 @@ var _ = require('lazy.js');
  */
 function TeamService($q, $http, ErrorHandling) {
 
-  var service = {};
+    var service = {};
 
-  service.allTeams = function() {
-  	var filterUrl = encodeURIComponent(JSON.stringify({"where":{"published":true,"deleted":false}}));
-    return $http.get("/api/teams?filter=" + filterUrl)
-    .then(response => response.data);
-  }
+    service.allTeams = function() {
+        var filterUrl = encodeURIComponent(JSON.stringify({ "where": { "published": true, "deleted": false } }));
+        return ErrorHandling.handle($http.get("/api/teams?filter=" + filterUrl));
+    }
 
-  service.team = function(id) {
-    return ErrorHandling.handle($http.get("/api/teams/" + id));
-  };
+    service.team = function(id) {
+        return ErrorHandling.handle($http.get("/api/teams/" + id));
+    };
 
-  return service;
+    return service;
 }
 
 servicesModule.service('TeamService', TeamService);

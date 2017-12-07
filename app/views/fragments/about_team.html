@@ -1,4 +1,5 @@
 <div ng-controller="AllTeamsCtrl">
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
     <div ng-repeat="team in allTeams">
         <div class="panel panel-default team">
             <div class="panel-heading team">
