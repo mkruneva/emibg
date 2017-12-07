@@ -4,8 +4,6 @@ var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
 function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
-    $scope.testWord = 'OK';
-    //$scope.partnerType = { partner: true, member: true }; //for test only -- actual value to be taken from the partners service
 
     var fetchPartners = function() {
         $scope.alerts = [];
@@ -14,7 +12,6 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
             )
             .then(function(response) {
                 $scope.partners = response.data;
-                //console.log('Partners are ', response.data);
             })
             .catch(function(err) {
                 $scope.alerts.push({ type: 'danger', msg: "Не е възможно да се покажат партньорите. Моля опитайте след малко." });
@@ -24,31 +21,6 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
 
     $scope.alerts = [];
 
-    
-    // $scope.showCategories = "partners,members";
-    // $scope.partnerType = { partner: true, member: true };
-
-    // // Filetercategory - Needs to be fixed 
-    // var partnerTypeInitialEvent = true;
-    // $scope.$watchCollection('partnerType', function() {
-    //     //console.log('partnerType is ', $scope.partnerType);
-    //     if (!partnerTypeInitialEvent) {
-    //         $scope.showCategories = "";
-    //         angular.forEach($scope.partnerType, function(value, key) {
-    //             if (value) {
-    //                 $scope.showCategories = $scope.showCategories + key + ",";
-    //             }
-    //         });
-    //         if ($scope.showCategories === "") {
-    //             $scope.showCategories = "some string that is not a category";
-    //         }
-    //         //console.log('showCategories is ', $scope.showCategories);
-    //         fetchPartners();
-    //     }
-    //     partnerTypeInitialEvent = false;
-    // });
-
-    // end Filetercategory 
 
     $scope.delete = function(id) {
         $scope.alerts = [];
@@ -73,9 +45,7 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
             )
             .then(response => {
                 $state.go('.', {
-                    page: $scope.page,
-                    // published: $scope.published + "",
-                    // showCategories: $scope.showCategories
+                    page: $scope.page
                 }, { reload: true });
             })
             .catch(err => {

@@ -59,6 +59,7 @@ function AdminPartnerCtrl($scope, $rootScope, $state, $stateParams, $http, $sce,
         init({
             title: { bg: '', en: '' },
             localId: 10,
+            type: 'partner',
             site: '',
             image: {
                 config: {
