@@ -586,6 +586,10 @@ div.team-bio {
     height: 80px;
 }
 
+.media-object.team-image {
+    height: 100px;
+}
+
 
 .single_post_content h2 {
     background: $navbar-color none repeat scroll 0px 0px;
@@ -1390,26 +1394,6 @@ h2.admin-partners {
 .members h2,
 .partners h2 {
     margin-bottom: 4%;
-}
-
-emi-image.img-thumbnail {
-    display: block;
-    background-color: lightgray; 
-}
-
-emi-image.img-thumbnail.partners {
-    width:160px;
-    height:80px;
-}
-
-.admin emi-image.img-thumbnail.partners {
-    width:140px;
-    height:70px;
-}
-
-.admin emi-image.img-thumbnail.teams {
-    width:70px;
-    height:140px;
 }
 
 
