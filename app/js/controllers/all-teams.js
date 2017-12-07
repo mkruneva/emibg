@@ -3,15 +3,15 @@
 var controllersModule = require('./_index');
 
 function AllTeamsCtrl($scope, $sce, $filter, TeamService) {
-  $scope.allTeams = TeamService.allTeams()
-  .then(teams => {
-  	teams = teams.map(elem => {
-	  elem.bio = $sce.trustAsHtml($filter('lang')(elem.bio));
-  	  return elem;
-  	});
-  	$scope.allTeams = $filter('orderBy')(teams, 'localId');
-  });
+    $scope.allTeams = TeamService.allTeams()
+        .then(teams => {
+            teams = teams.map(elem => {
+            	if (elem.bio) {elem.hasBio = true} else {elem.hasBio = false};
+                elem.bio = $sce.trustAsHtml($filter('lang')(elem.bio));
+                return elem;
+            });
+            $scope.allTeams = $filter('orderBy')(teams, 'localId');
+        });
 }
 
 controllersModule.controller('AllTeamsCtrl', AllTeamsCtrl);
-
