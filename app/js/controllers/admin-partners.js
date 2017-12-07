@@ -7,9 +7,9 @@ function AdminPartnersCtrl($scope, $stateParams, $state, $http, EmiAuth) {
 
     var fetchPartners = function() {
         $scope.alerts = [];
-        $http.get(
-                "/api/partners/"
-            )
+        
+        var filterUrl = encodeURIComponent(JSON.stringify({"where":{"deleted":false}}));  //show only not deleted partners
+        $http.get("/api/partners/?filter=" + filterUrl)  
             .then(function(response) {
                 $scope.partners = response.data;
             })
