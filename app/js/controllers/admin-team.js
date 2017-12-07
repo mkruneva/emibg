@@ -83,7 +83,7 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, Te
                     'insertdatetime media nonbreaking save table contextmenu directionality',
                     'template textcolor colorpicker textpattern'
                 ],
-                toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | print preview media | forecolor',
+                toolbar1: 'undo redo | bold italic | alignleft alignjustify | bullist numlist outdent indent | forecolor',
                 image_caption: true,
                 image_advtab: true,
                 language: "bg",
