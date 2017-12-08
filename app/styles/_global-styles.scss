@@ -341,11 +341,49 @@ div.home-right-col {
 //BANNER
 .banner {
     background-color: $navbar-color;
-    background-image: url(/images/banner.png);
+    background-image: url(/images/banner-empty.png);
     height: 180px;
-    display: inline;
     float: left;
     width: 100%;
+    position: relative;
+}
+
+.banner>div.logo-image {
+    position: absolute;
+    width: 113px;
+    left: 38px;
+    top: 28px;
+}
+
+.banner>div.logo-image>img {
+    width: 113px;
+}
+
+.banner>div.logo-text {
+    position: absolute;
+    left: 20%;
+    //top: 20%;
+    top: 37px;
+}
+
+.banner>div.logo-text>h1,
+.banner>div.logo-text>h3 {
+    font-family: 'Arimo', sans-serif; 
+    color: #034694; 
+    text-shadow: 0 0 3px #FFF, 0 0 5px #faead6;
+}
+
+.banner>div.logo-text>h1 {
+    font-size: 43px;
+}
+
+.banner>div.logo-text>h3 {
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    font-size: 26px;
+    top: -32px;
+    left: 112px;
 }
 
 
