@@ -4,6 +4,7 @@ var controllersModule = require('./_index');
 
 function AllTeamsCtrl($scope, $sce, $filter, TeamService) {
     $scope.alerts = [];
+    $scope.loading = true;
     $scope.allTeams = TeamService.allTeams()
         .then(teams => {
             teams = teams.map(elem => {
@@ -12,10 +13,12 @@ function AllTeamsCtrl($scope, $sce, $filter, TeamService) {
                 return elem;
             });
             $scope.allTeams = $filter('orderBy')(teams, 'localId');
+            $scope.loading = false;
         })
         .catch(err => {
             $scope.alerts.push({ type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err });
             console.log("APP ERROR: " + err);
+            $scope.loading = false;
         });
 }
 
