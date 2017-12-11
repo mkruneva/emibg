@@ -35,6 +35,10 @@ var controllerLogic = function($scope, $stateParams, $http, $state, $document, P
     console.log("APP ERROR: " + err);
     $scope.loading = false;
   });
+
+  $scope.showLoader = function() {
+    return ($scope.events.lenght==0);
+  }
 }
 
 function AllEventsCtrl($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling) {
