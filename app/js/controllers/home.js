@@ -8,10 +8,10 @@ var _ = require('lazy.js');
 */
 function HomeCtrl($scope, $http, $stateParams, ErrorHandling) {
   $scope.alerts = [];
-  $scope.loaded = false;
+  $scope.loading = true;
   ErrorHandling.handle($http.get("/api/home-pages/" + ($stateParams.lang || "bg")))
   .then(function(data) {
-    $scope.loaded = true;
+    $scope.loading = false;
     $scope.mainNews = _(data.news).take(1).toArray();
     $scope.news = _(data.news).drop(1).toArray();
 
@@ -25,7 +25,7 @@ function HomeCtrl($scope, $http, $stateParams, ErrorHandling) {
     $scope.sliderInterval = 10000;
   })
   .catch(err => {
-    $scope.loaded = true;
+    $scope.loading = false;
     $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
     console.log("APP ERROR: " + err);
   });
