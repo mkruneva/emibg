@@ -16,11 +16,18 @@ function AdminPartnerCtrl($scope, $rootScope, $state, $stateParams, $http, $sce,
         }
     }
 
-    // var nullify
+    var nullify = function(field) {
+        if (field.bg != null && field.bg != undefined && field.bg.trim() === "")
+            field.bg = null;
+        if (field.en != null && field.en != undefined && field.en.trim() === "")
+            field.en = null;
+    }
 
     $scope.save = function() {
 
         $scope.alerts = [];
+        // Remove the empty props to be able to filter with exists in ES
+        nullify($scope.partner.title);
 
         var method = $http.post;
         var url = "/api/partners";

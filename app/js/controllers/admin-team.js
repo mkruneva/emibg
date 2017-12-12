@@ -17,14 +17,19 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, Te
         }
     }
 
-    // var nullify
+    var nullify = function(field) {
+        if (field.bg != null && field.bg != undefined && field.bg.trim() === "")
+            field.bg = null;
+        if (field.en != null && field.en != undefined && field.en.trim() === "")
+            field.en = null;
+    }
 
     $scope.save = function() {
 
         $scope.alerts = [];
 
-        // nullify ?? 
-
+        // Remove the empty props to be able to filter with exists in ES
+        nullify($scope.team.title);
         $scope.team.bio = $scope.bio;
 
         var method = $http.post;
