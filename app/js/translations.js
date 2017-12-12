@@ -64,7 +64,7 @@ function Translations($translateProvider) {
       BIO: 'Biography',
       EMI_BANNER: 'Energy Management Institute',
       EURELECTRIC_MEMBER: 'a fully-fledged member of EURELECTRIC',
-      EMI_LOGO: '/images/EMI_logo_en.png'
+      EMI_LOGO: '/images/EMI_logo_en_glow.png'
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -124,7 +124,7 @@ function Translations($translateProvider) {
       BIO: 'Биография',
       EMI_BANNER: 'Институт за енергиен мениджмънт',
       EURELECTRIC_MEMBER: 'пълноправен член на EURELECTRIC',
-      EMI_LOGO: '/images/EMI_logo_bg.png'
+      EMI_LOGO: '/images/EMI_logo_bg_glow.png'
     });
   $translateProvider.preferredLanguage('bg');
 }
