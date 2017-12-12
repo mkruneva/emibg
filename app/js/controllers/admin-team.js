@@ -29,7 +29,7 @@ function AdminTeamCtrl($scope, $rootScope, $stateParams, $http, $state, $sce, Te
         $scope.alerts = [];
 
         // Remove the empty props to be able to filter with exists in ES
-        nullify($scope.team.title);
+        nullify($scope.team.name);
         $scope.team.bio = $scope.bio;
 
         var method = $http.post;
